@@ -1,11 +1,11 @@
 //Data/SeedData.cs
 using ClaimSystem.Web.Models;
 using ClaimSystem.Web.Data;
-
 using Microsoft.AspNetCore.Identity;
 
-namespace ClaimSystem.Data
+namespace ClaimSystem.Web.Data
 {
+    //Seed Data for Roles and Test Users
     public static class SeedData
     {
         public static async Task InitializeAsync(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
