@@ -1,0 +1,43 @@
+@model IEnumerable<ClaimSystem.Models.Claim>
+@{
+    ViewData["Title"] = "Pending Claims";
+}
+<h2>Pending Claims</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ClaimId</th>
+            <th>Lecturer</th>
+            <th>Submitted</th>
+            <th>Hours</th>
+            <th>Total</th>
+            <th>Documents</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.ClaimId</td>
+                <td>@c.LecturerId</td>
+                <td>@c.SubmissionDate.ToLocalTime().ToString("g")</td>
+                <td>@c.HoursWorked</td>
+                <td>@String.Format("{0:C}", c.TotalAmount)</td>
+                <td>@(c.SupportingDocuments?.Count() ?? 0)</td>
+                <td>
+                    <form asp-action="Approve" method="post" style="display:inline">
+                        <input type="hidden" name="id" value="@c.ClaimId" />
+                        <button class="btn btn-success btn-sm" type="submit">Approve</button>
+                    </form>
+                    <form asp-action="Reject" method="post" style="display:inline" class="ms-2">
+                        <input type="hidden" name="id" value="@c.ClaimId" />
+                        <button class="btn btn-danger btn-sm" type="submit">Reject</button>
+                    </form>
+                    <a class="btn btn-outline-secondary btn-sm ms-2" asp-controller="Claim" asp-action="Details" asp-route-id="@c.ClaimId">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

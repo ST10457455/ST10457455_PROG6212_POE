@@ -1,0 +1,8 @@
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.csproj.AssemblyReference.cache
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.GeneratedMSBuildEditorConfig.editorconfig
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.AssemblyInfoInputs.cache
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.AssemblyInfo.cs
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.csproj.CoreCompileInputs.cache
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.MvcApplicationPartsAssemblyInfo.cache
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.RazorAssemblyInfo.cache
+/Users/heloisebyrne/Desktop/ST10457455_PROG6212_POE_Part2/ClaimSystem.Web/obj/Debug/net8.0/ClaimSystem.Web.RazorAssemblyInfo.cs

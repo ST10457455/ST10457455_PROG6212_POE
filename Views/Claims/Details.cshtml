@@ -1,0 +1,60 @@
+@model ClaimSystem.Models.Claim
+@{
+    ViewData["Title"] = "Claim Details";
+}
+<h2>Claim Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Claim ID</dt>
+        <dd class="col-sm-9">@Model.ClaimId</dd>
+
+        <dt class="col-sm-3">Hours Worked</dt>
+        <dd class="col-sm-9">@Model.HoursWorked</dd>
+
+        <dt class="col-sm-3">Hourly Rate</dt>
+        <dd class="col-sm-9">@Model.HourlyRate</dd>
+
+        <dt class="col-sm-3">Total Amount</dt>
+        <dd class="col-sm-9">@String.Format("{0:C}", Model.TotalAmount)</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">
+            <span id="claim-status" class="badge @(Model.Status == ClaimSystem.Models.ClaimStatus.Pending ? "bg-warning" : (Model.Status == ClaimSystem.Models.ClaimStatus.Approved ? "bg-success" : "bg-danger"))">
+                @Model.Status
+            </span>
+        </dd>
+
+        <dt class="col-sm-3">Submitted</dt>
+        <dd class="col-sm-9">@Model.SubmissionDate.ToLocalTime().ToString("g")</dd>
+
+        <dt class="col-sm-3">Documents</dt>
+        <dd class="col-sm-9">
+            @if (Model.SupportingDocuments != null && Model.SupportingDocuments.Any())
+            {
+                <ul>
+                    @foreach (var d in Model.SupportingDocuments)
+                    {
+                        <li><a href="@d.FilePath" target="_blank">@d.OriginalFileName</a></li>
+                    }
+                </ul>
+            }
+            else { <span>No documents uploaded.</span> }
+        </dd>
+    </dl>
+</div>
+
+@section Scripts {
+    <script src="~/lib/signalr/signalr.min.js"></script>
+    <script>
+        // optional: set up SignalR to update status in real-time
+        const connection = new signalR.HubConnectionBuilder().withUrl("/claimHub").build();
+        connection.on("ReceiveStatusUpdate", (claimId, status) => {
+            // If current page claimId equals, update badge
+            if (@Model.ClaimId === claimId) {
+                document.getElementById("claim-status").innerText = status;
+            }
+        });
+        connection.start().catch(err => console.error(err));
+    </script>
+}

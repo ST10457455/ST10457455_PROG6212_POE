@@ -1,0 +1,41 @@
+@model IEnumerable<ClaimSystem.Web.Models.Claim>
+@{
+    ViewData["Title"] = "My Claims";
+}
+
+<h2>My Claims</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Claim ID</th>
+            <th>Hours</th>
+            <th>Rate</th>
+            <th>Status</th>
+            <th>Submitted</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.ClaimId</td>
+                <td>@claim.HoursWorked</td>
+                <td>R @claim.HourlyRate</td>
+                <td>
+                    @if (claim.Status == ClaimSystem.Web.Models.ClaimStatus.Pending)
+                    {
+                        <span class="badge bg-warning">Pending</span>
+                    }
+                    else if (claim.Status == ClaimSystem.Web.Models.ClaimStatus.Approved)
+                    {
+                        <span class="badge bg-success">Approved</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Rejected</span>
+                    }
+                </td>
+                <td>@claim.SubmissionDate.ToShortDateString()</td>
+            </tr>
+        }

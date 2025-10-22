@@ -1,0 +1,9 @@
+@* Views/Home/Index.cshtml *@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to ClaimSystem</h1>
+<p>Use the navigation menu to create or review claims.</p>
+<a class="btn btn-primary" asp-controller="Claims" asp-action="Create">Submit a Claim</a>
+<a class="btn btn-secondary" asp-controller="Claims" asp-action="Index">My Claims</a>

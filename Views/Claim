@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Claim Submitted";
+}
+
+<div class="alert alert-success mt-4">
+    <h3>✅ Your claim has been successfully submitted!</h3>
+    <p>It will now be reviewed by your Programme Coordinator or Academic Manager.</p>
+    <a asp-action="Index" class="btn btn-primary mt-3">View My Claims</a>
+</div>
