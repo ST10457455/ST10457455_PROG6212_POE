@@ -101,7 +101,7 @@ Student Number: ST10457455
 
 Module Code: PROG6212
 
-Institution: [Your Institution Name]
+Institution: Varsity College Newlands Cape Town
 
 Project: Portfolio of Evidence – Part 2
 
