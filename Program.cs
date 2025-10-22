@@ -1,6 +1,10 @@
 using ClaimSystem.Web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
+//Build web application
 var builder = WebApplication.CreateBuilder(args);
 
 // ✅ Configure database connection
