@@ -21,3 +21,4 @@ namespace ClaimSystem.Web.Models
         public Contract? Contract { get; set; }
     }
 }
+// Model updated for POE submission
