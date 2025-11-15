@@ -1,0 +1,24 @@
+@model dynamic
+
+<h2>Claim Summary</h2>
+
+<table class="table table-hover mt-3">
+    <tr>
+        <th>Claim ID</th>
+        <th>Contract</th>
+        <th>Rate</th>
+        <th>Hours</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ClaimId</td>
+            <td>@item.ContractName</td>
+            <td>@item.Rate</td>
+            <td>@item.Hours</td>
+            <td>@item.Amount</td>
+        </tr>
+    }
+</table>

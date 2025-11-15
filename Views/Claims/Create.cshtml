@@ -1,0 +1,20 @@
+@model ClaimSystem.Web.Models.MonthlyClaim
+
+<h2>Add Monthly Claim</h2>
+
+<form asp-action="Create" method="post">
+
+    <label>Contract</label>
+    <select asp-for="ContractId" class="form-control">
+        @foreach (var c in ViewBag.Contracts)
+        {
+            <option value="@c.ContractId">@c.ContractName</option>
+        }
+    </select>
+
+    <label>Hours Worked</label>
+    <input asp-for="Hours" class="form-control" />
+
+    <button class="btn btn-success mt-3">Save</button>
+
+</form>

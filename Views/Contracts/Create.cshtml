@@ -1,0 +1,24 @@
+@model ClaimSystem.Web.Models.Contract
+
+<h2>Add Contract</h2>
+
+<form asp-action="Create" method="post">
+
+    <label>Contract Name</label>
+    <input asp-for="ContractName" class="form-control" />
+
+    <label>Contractor</label>
+    <select asp-for="ContractorId" class="form-control">
+        @foreach (var c in ViewBag.Contractors)
+        {
+            <option value="@c.ContractorId">@c.FirstName @c.LastName</option>
+        }
+    </select>
+
+    <label>Hourly Rate</label>
+    <input asp-for="HourlyRate" class="form-control" />
+
+    <button class="btn btn-success mt-3">Save</button>
+
+</form>
+ 

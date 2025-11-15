@@ -1,0 +1,22 @@
+@model List<ClaimSystem.Web.Models.Contractor>
+
+<h2>Contractors</h2>
+
+<a class="btn btn-primary" asp-action="Create">Add Contractor</a>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.ContractorId</td>
+            <td>@c.FirstName @c.LastName</td>
+            <td>@c.Email</td>
+        </tr>
+    }
+</table>

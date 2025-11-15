@@ -1,0 +1,19 @@
+@model ClaimSystem.Web.Models.Contractor
+
+<h2>Add New Contractor</h2>
+
+<form asp-action="Create" method="post" class="mt-3">
+
+    <label>First Name</label>
+    <input asp-for="FirstName" class="form-control" />
+
+    <label>Last Name</label>
+    <input asp-for="LastName" class="form-control" />
+
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+
+    <button class="btn btn-success mt-3">Save</button>
+
+</form>
+ 

@@ -1,0 +1,28 @@
+@model List<ClaimSystem.Web.Models.MonthlyClaim>
+
+<h2>Monthly Claims</h2>
+
+<a class="btn btn-primary" asp-action="Create">Add Claim</a>
+
+<div class="mb-3">
+    <a asp-action="Summary" class="btn btn-primary">See Summary</a>
+</div>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Contract</th>
+        <th>Hours</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.ClaimId</td>
+            <td>@c.ContractId</td>
+            <td>@c.Hours</td>
+            <td>@c.Total</td>
+        </tr>
+    }
+</table>
